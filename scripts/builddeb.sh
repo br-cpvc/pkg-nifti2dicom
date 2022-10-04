@@ -81,7 +81,7 @@ upstream_version="${version}"
 echo "upstream_version=$upstream_version"
 echo "debian_revision=$debian_revision"
 
-packageversion="${upstream_version}-git${debian_revision}"
+packageversion="${upstream_version}-github${debian_revision}"
 packagename="${package}_${packageversion}_${arch}"
 echo "packagename=$packagename"
 packagefile="${packagename}.deb"
