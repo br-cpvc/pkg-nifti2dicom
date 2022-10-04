@@ -1,0 +1,66 @@
+--- CMakeLists.txt	2014-10-23 13:28:43.288212049 +0200
++++ CMakeLists.txt	2014-10-23 13:08:45.892153754 +0200
+@@ -45,11 +45,11 @@
+ include(${ITK_USE_FILE})
+ 
+ #Check Qt4 Library [Qt4] (4.4.0)
+-find_package(Qt4 4.4.0 REQUIRED)
++#find_package(Qt4 4.4.0 REQUIRED)
+ 
+ #Check VTK Library [Visualization ToolKit]
+-find_package(VTK REQUIRED)
+-include(${VTK_USE_FILE})
++#find_package(VTK REQUIRED)
++#include(${VTK_USE_FILE})
+ 
+ #TODO Check QVTK
+ 
+@@ -66,4 +66,4 @@
+ 
+ add_subdirectory(src)
+ add_subdirectory(doc)
+-add_subdirectory(data)
++#add_subdirectory(data)
+
+--- doc/CMakeLists.txt	2014-10-23 13:25:04.616201403 +0200
++++ doc/CMakeLists.txt	2014-10-23 13:10:25.956158604 +0200
+@@ -90,4 +90,4 @@
+                                        ${CMAKE_CURRENT_BINARY_DIR}/man/man1/qnifti2dicom.1.gz)
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/man/man1/nifti2dicom.1.gz DESTINATION share/man/man1)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/man/man1/qnifti2dicom.1.gz DESTINATION share/man/man1)
++#install(FILES ${CMAKE_CURRENT_BINARY_DIR}/man/man1/qnifti2dicom.1.gz DESTINATION share/man/man1)
+
+--- src/CMakeLists.txt	2014-10-23 13:20:48.232188921 +0200
++++ src/CMakeLists.txt	2014-10-23 13:03:28.440138306 +0200
+@@ -18,4 +18,4 @@
+ 
+ 
+ add_subdirectory(core)
+-add_subdirectory(gui)
++#add_subdirectory(gui)
+
+--- src/core/CMakeLists.txt     2014-10-28 13:17:03.009020791 +0100
++++ src/core/CMakeLists.txt     2014-10-28 13:17:36.737020787 +0100
+@@ -63,6 +63,6 @@
+
+
+ # nifti2dicom target
+-add_executable(nifti2dicom ${nifti2dicom_SOURCES})
+-target_link_libraries(nifti2dicom nifti2dicom_core)
+-install(TARGETS nifti2dicom RUNTIME DESTINATION bin)
++add_executable(nifti2dicom-noreorient ${nifti2dicom_SOURCES})
++target_link_libraries(nifti2dicom-noreorient nifti2dicom_core)
++install(TARGETS nifti2dicom-noreorient RUNTIME DESTINATION bin)
+
+--- src/core/n2dInputFilter.cxx.orig    2014-10-28 13:10:28.517020838 +0100
++++ src/core/n2dInputFilter.cxx 2014-10-28 13:11:04.109020834 +0100
+@@ -23,7 +23,7 @@
+ #include <itkCastImageFilter.h>
+ #include <itkOrientImageFilter.h>
+ #include <sstream>
+-//#define NO_REORIENT
++#define NO_REORIENT
+
+
+ namespace n2d {

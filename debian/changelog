@@ -1,0 +1,87 @@
+nifti2dicom (0.4.8-1build3) utopic; urgency=medium
+
+  * Removed reorientation.
+
+ -- Christian P. V. Christoffersen <88783438+br-cpvc@users.noreply.github.com>  Tue, 28 Oct 2014 13:32:10 +0100
+
+nifti2dicom (0.4.8-1build2) utopic; urgency=medium
+
+  * Rebuild against libinsighttoolkit4.6.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 10 Oct 2014 14:42:10 +0100
+
+nifti2dicom (0.4.8-1build1) utopic; urgency=medium
+
+  * Rebuild against libvtk6.1.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 25 Jun 2014 12:17:58 +0100
+
+nifti2dicom (0.4.8-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Change VTK  b-d to libvtk6-dev | libvtk5-qt4-dev.
+  * Refresh nd-backport.patch.
+  * Add backport patch for Ubuntu trusty.
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Thu, 05 Jun 2014 00:37:19 +0200
+
+nifti2dicom (0.4.7-2) unstable; urgency=medium
+
+  * Build with libinsighttoolkit4-dev only on amd64 and i386.
+    Insighttoolkit4 package is not build on different architectures.
+  * Restore dependency on libfftw3-dev. This is necessary when building
+    with libinsighttoolkit3-dev, due to #740628.
+  * Refresh nd-backport.patch.
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Tue, 04 Mar 2014 15:01:57 +0100
+
+nifti2dicom (0.4.7-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #729020)
+  * Bump Standards-Version to 3.9.5; no changes needed.
+  * Remove libgdcm2-dev and libfftw3-dev from b-d (Closes: #731925)
+  * Add neurodebian backport patches
+  * Do not modify CMakeLists from nd-backport.patch. Add
+    nd-backport_itk-use-file.patch and fix nd-backport.patch in order to
+    modify files only in debian.
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Fri, 03 Jan 2014 18:29:41 +0100
+
+nifti2dicom (0.4.6-2) unstable; urgency=low
+
+  * Link with -Wl,--as-needed. (Closes: #716712)
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Fri, 20 Sep 2013 09:14:50 +0200
+
+nifti2dicom (0.4.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build with libinsighttoolkit4-dev (>= 4.3.0) or libinsighttoolkit3-dev.
+  * Add libfftw3-dev to build dependencies.
+  * Bump Standards-Version to 3.9.4; no changes needed.
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Fri, 21 Jun 2013 16:34:19 +0200
+
+nifti2dicom (0.4.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Initial release. (Closes: #670171)
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Tue, 31 Jul 2012 12:17:56 +0200
+
+nifti2dicom (0.4.3-2) UNRELEASED; urgency=low
+
+  [ Yaroslav Halchenko ]
+  * Build while just keeping that export for hardedning in debian/rules
+    while relaxing (removing) versioned dpkg dependency
+
+  [ Daniele E. Domenichelli ]
+  * Add libgdcm2-dev to build dependencies
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Tue, 10 Jul 2012 00:03:48 +0200
+
+nifti2dicom (0.4.3-1) UNRELEASED; urgency=low
+
+  * Initial Debian package
+
+ -- Daniele E. Domenichelli <daniele.domenichelli@gmail.com>  Thu, 28 Jun 2012 17:07:54 +0200
